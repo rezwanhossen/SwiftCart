@@ -92,7 +92,7 @@ const loadCategoryData = async (category) => {
   const res = await fetch(url);
   const data = await res.json();
 
-  displayProducts(data, "product-Show"); // for product page
+  displayProducts(data, "product-Show");
 };
 
 const setActiveButton = (clickedBtn) => {
