@@ -1,14 +1,43 @@
-const displaysingleProducts = () => {};
+const displaysingleProducts = (product) => {
+  console.log(product);
+  const modl = document.getElementById("details_prod");
+  modl.innerHTML = `
+   <div class="flex  gap-3">
+            <div class="flex-1">
+              <img
+                class=" h-[300px]"
+                src=${product.image}
+                alt=""
+              />
+              <div class="flex my-3 justify-between">
+              <p class="bg-indigo-100 badge rounded-xl">${product.category}</p>
+              <p class="text-sm badge text-gray-500">
+                <i class="text-orange-400 fa-solid fa-star"></i> ${product.rating?.rate} (${product.rating?.count})
+              </p>
+            </div>
+           
+            </div>
+            <div class="flex-1 space-y-2">
+               <h1 class="text-2xl font-bold">${product.title}</h1>
+              <h1 class="text-2xl font-bold text-orange-600">$ ${product.price}</h1>
+              <p>${product.description} </p>
+               
+            </div>
+          </div>
+  
+  `;
+  document.getElementById("my_modal_5").showModal();
+};
+
 const detailspasge = async (id) => {
   const res = await fetch(`https://fakestoreapi.com/products/${id}`);
   const data = await res.json();
-  console.log(data);
   displaysingleProducts(data);
 };
+
 const displayProducts = (data) => {
   const allshowproduct = document.getElementById("product-Show");
   allshowproduct.innerHTML = "";
-
   data.forEach((ele) => {
     const card = document.createElement("div");
     card.innerHTML = `
@@ -39,7 +68,7 @@ const displayProducts = (data) => {
             <h2 class="card-title">$ ${ele.price}</h2>
   
             <div class="card-actions justify-between mt-auto">
-              <button onclick="detailspasge(${
+              <button onclick="onclick=detailspasge(${
                 ele.id
               })" class="btn px-6 py-3"><i class="fa-solid fa-eye"></i> Details</button>
               <button class="btn bg-sky-500 hover:bg-sky-700 px-6 py-3 text-gray-50">
