@@ -158,37 +158,22 @@
     </section>
     <section class="py-10 max-w-10/12 mx-auto">
       <h1 class="text-3xl md:text-5xl font-bold mt-10">Trending Now</h1>
-      <div class="mt-10 grid gap-8 grid-cols-1 md:grid-cols-3">
-        <div class="card bg-base-100 shadow-sm">
-          <figure>
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-              alt="Shoes"
-            />
-          </figure>
-
-          <div class="card-body">
-            <div class="card-actions justify-between">
-              <p class="bg-indigo-100 badge rounded-xl">collection</p>
-              <p class="text-sm badge text-gray-500">ratting</p>
-            </div>
-            <h2 class="card-title">Card Title</h2>
-            <h2 class="card-title">22$</h2>
-
-            <div class="card-actions justify-between">
-              <button class="btn px-6 py-3">
-                <i class="fa-solid fa-eye"></i> Details
-              </button>
-              <button
-                class="btn bg-sky-500 hover:bg-sky-700 px-6 py-3 text-gray-50"
-              >
-                <i class="fa-solid fa-cart-shopping"></i>Add
-              </button>
-            </div>
-          </div>
+      <div
+        id="three-product-show"
+        class="mt-10 grid gap-8 grid-cols-1 md:grid-cols-4"
+      ></div>
+    </section>
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+      <div class="modal-box">
+        <div id="details_prod"></div>
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn">Close</button>
+          </form>
         </div>
       </div>
-    </section>
+    </dialog>
 
     <section class="bg-slate-900 text-gray-50">
       <footer class="footer sm:footer-horizontal p-10 max-w-10/12 mx-auto">
